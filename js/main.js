@@ -34,7 +34,7 @@ $(function(){
 	if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { 	
 		$(window).on("scroll",function(e){
 			position = $(window).scrollTop();
-			$("#firetitle").css("top",-(position/12));
+			$("#firetitle").css("top",-(position / $("#firetitle").attr("data-parallax-ratio")));
 			$(".stars-background").each(function(index,element){
 				var ratio = $(this).attr("data-parallax-ratio");
 				$(this).css({"background-position": "0px" + ' ' + '-' + position/ratio + "px"});			

@@ -145,7 +145,7 @@ body{
 	 -moz-background-size: cover; 
 	 -o-background-size: cover; 
 	 background-size: cover;
-	 font-family: open_sansregular, arial;	 
+	 font-family: averiaregular, arial;	 
 }
 
 
@@ -164,7 +164,7 @@ h2, h3{
 
 p{
 	color:#575d70;
-	font-size: 1.5em;
+	font-size: 1.3em;
 	line-height: 1.2em;
 	letter-spacing: -1px;
 }
@@ -413,18 +413,17 @@ p{
 
 #planet > div:nth-of-type(2){
 	background-image: url(../img/logo/planet02.png);
-	animation:planetmiddle infinite 7s linear;
-	-webkit-animation:planetmiddle infinite 7s linear;
-	opacity: 0;	
+	animation:planetmiddle infinite 10s linear;
+	-webkit-animation:planetmiddle infinite 10s linear;
+	*opacity: 0;
 }
 
 #planet > div:nth-of-type(3){
 	background-image: url(../img/logo/planet03.png);
-	animation:planetfront infinite 7s linear;
-	-webkit-animation:planetfront infinite 7s linear;
-	opacity: 0;	
+	animation:planetfront infinite 10s linear;
+	-webkit-animation:planetfront infinite 10s linear;
+	opacity: 0;
 }
-
 
 #firetitle{
 	background-image: url(../img/logo/fireborne.png);
@@ -605,20 +604,16 @@ p{
     opacity:0;
   }
   
- 25% {
+  20% {
     opacity:1;
   }
 
-  50% {
+  40% {
     opacity:0;
   }
-
-  75%{
-  	opacity:0;
-  }
-
-  100%{
-	opacity:0;
+	
+  100% {
+    opacity:0;
   }
 }
 
@@ -627,39 +622,31 @@ p{
     opacity:0;
   }
   
- 25% {
+  20% {
     opacity:1;
   }
 
-  50% {
+  40% {
     opacity:0;
   }
-
-  75%{
-  	opacity:0;
-  }
-
-  100%{
-	opacity:0;
+	
+  100% {
+    opacity:0;
   }
 }
 
 
 @keyframes planetfront{
-  0%{
-    opacity:0;
-  }
-  
- 25% {
+  40% {
     opacity:0;
   }
 
-  50% {
-    opacity:0;
-  }
-
-  75%{
+  60%{
   	opacity:1;
+  }
+
+  80%{
+	opacity:0.5;
   }
 
   100%{
@@ -668,20 +655,16 @@ p{
 }
 
 @-webkit-keyframes planetfront{
-  0%{
-    opacity:0;
-  }
-  
- 25% {
+  40% {
     opacity:0;
   }
 
-  50% {
-    opacity:0;
-  }
-
-  75%{
+  60%{
   	opacity:1;
+  }
+
+  80%{
+	opacity:0.5;
   }
 
   100%{
@@ -743,7 +726,7 @@ p{
 }
 /* NEWSLETTER */
 .newsletter{
-	margin:180px auto;
+	margin:140px auto;
 }
 
 .newsletter h2, .newsletter h3{
