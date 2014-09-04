@@ -23,8 +23,7 @@ $(function(){
 		var image = new Image();
 		image.onload = function(){
 			imagesLoaded++;	
-			var percentage = (imagesLoaded*100) / imagesToLoad.length;
-			console.log(percentage);
+			var percentage = (imagesLoaded*100) / imagesToLoad.length;			
 			$("#progress").css("width",percentage+"%");
 			if(imagesLoaded>=imagesToLoad.length)
 				$("#loader").fadeOut("slow");
@@ -35,7 +34,7 @@ $(function(){
 	if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { 	
 		$(window).on("scroll",function(e){
 			position = $(window).scrollTop();
-			$("#firetitle").css("top",position/12);
+			$("#firetitle").css("top",-(position/12));
 			$(".stars-background").each(function(index,element){
 				var ratio = $(this).attr("data-parallax-ratio");
 				$(this).css({"background-position": "0px" + ' ' + '-' + position/ratio + "px"});			
@@ -45,9 +44,11 @@ $(function(){
 
 	$(window).on("resize",function(){
 		resizeLogo();
+		resizeSideImages();
+		resizeFooterSpacing();
 	});
 
-	$(document).on("click",".devblog_media,.devblog_content",function(){
+	$(document).on("click",".devblog_media,.devblog_date",function(){
 		var href = $(this).closest(".devblog_article").attr("href");
 		window.open(href,'_blank');
 	});	
@@ -55,6 +56,7 @@ $(function(){
 	$(".lazy").lazyload();
 	initializeLogo();
 	readTumblrPosts();
+	resizeFooterSpacing();
 });
 
 
@@ -67,6 +69,7 @@ function initializeLogo(){
 		logo_max_height = planet.height;
 		logo_ratio = logo_max_width/logo_max_height;
 		resizeLogo();
+		resizeSideImages();
 	}
 	planet.src = planet_filename;	
 }
@@ -79,13 +82,28 @@ function resizeLogo(){
 	$(".logo").css("min-height",Math.min(window_width,logo_max_width)/logo_ratio);	
 }
 
+function resizeSideImages(){
+	//$(".side-image").css("height",$(this).parent().parent().height());
+	$(".side-image").each(function(i,e){
+		var maxHeight = 0;
+		$(e).parent().siblings().each(function(i,e){			
+			if($(e).find(".side-image").length==0)
+				maxHeight = Math.max(maxHeight,$(e).height());
+		});
+		$(e).height(maxHeight);
+	});
+}
+
+function resizeFooterSpacing(){
+	$("#website").css("padding-bottom",$("footer").height()/2);
+	console.log($("footer").height());
+}
 /* RAPATRIEMENT DES POSTS TUMBLR */
 function readTumblrPosts(){
 	$.ajax({
 		url:tumblr_url,
 		dataType:"script",
-		success:function(){
-			console.log(tumblr_api_read);
+		success:function(){				
 			var template = $(".devblog_template")[0].outerHTML;
 
 			for(var i in tumblr_api_read.posts){
@@ -103,7 +121,8 @@ function readTumblrPosts(){
 				switch(post.type){
 					case "regular":
 						postElement.find(".devblog_content").html(post['regular-body']);
-						postElement.find(".devblog_media").hide();
+						//postElement.find(".devblog_media").hide();
+						postElement.find(".devblog_media").css("background-image","url(img/tumblr_default.png)");						
 						break;
 					case "photo":
 						postElement.find(".devblog_content").html(post['photo-caption']);

@@ -10,6 +10,14 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	@font-face {
+	font-family: 'averiaregular';
+	src: url('../fonts/averia-regular-webfont.svg#averiaregular') format('svg');
+	}
+}
+
 /*
 @font-face {
     font-family: 'averialight';
@@ -86,6 +94,13 @@
          url('../fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
     font-weight: normal;
     font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	@font-face {
+	font-family: 'open_sansregular';
+	src: url('../fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+	}
 }
 
 /* HELPERS */
@@ -167,8 +182,7 @@ p{
 #website{
 	position:relative;
 	z-index:10;
-	width:100%;
-	padding-bottom: 600px;	
+	width:100%;	
 }
 
 #loader{
@@ -681,6 +695,9 @@ p{
 	z-index: 9999;	
 }
 
+
+/* PRESENTATION */
+
 #first_prez img{
 	margin-bottom: 30px;
 }
@@ -707,6 +724,23 @@ p{
 	padding: 20px 0;
 }
 
+.side-image{
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:contain;
+	width:100%;
+	height:100%;	
+}
+#perso{
+	background-image:url(../img/about_perso.png);	
+}
+#undead{
+	background-image:url(../img/undead.png);
+}
+
+#greedling{
+	background-image:url(../img/greedling.png);
+}
 /* NEWSLETTER */
 .newsletter{
 	margin:180px auto;
@@ -726,7 +760,7 @@ p{
 	width:157px;
 	height:45px;
 	color:black;	
-	font-size: 154%;
+	font-size: 20px;
 	background: url(../img/btn_submit.png);
 	background-size: 157px 45px;
 	border:none;
@@ -798,7 +832,7 @@ p{
 	display:none;
 }
 
-.devblog_media,.devblog_content{
+.devblog_media,.devblog_date{
 	cursor:pointer;
 }
 
@@ -1002,5 +1036,7 @@ footer #legal p{
 		padding:4px;
 	}
 
-
+	.side-image{
+		max-height:435px;
+	}
 }
