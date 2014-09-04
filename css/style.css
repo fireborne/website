@@ -700,6 +700,7 @@ p{
 }
 
 .signature{
+    margin-top: 0px;
 	color:#575d70;
 }
 
@@ -715,7 +716,7 @@ p{
 	height:100%;	
 }
 #perso{
-	background-image:url(../img/about_perso.png);	
+	background-image:url(../img/Nod_Idle3.gif);	
 }
 #undead{
 	background-image:url(../img/undead.png);
