@@ -1,4 +1,4 @@
-var tumblr_url = "http://firebornegame.tumblr.com/api/read/json/?num=3";
+var tumblr_url = "http://blog.firebornegame.com/api/read/json/?num=3";
 
 var planet_filename = "img/logo/planet01.png"; //image de référence pour le resizing du logo
 
