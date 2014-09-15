@@ -239,7 +239,7 @@ p{
 
 h2.quotes{
     font-size: 25px;
-    margin-top: 10px;
+    margin-top: 25px;
 }
 
 /* STARS */
@@ -766,7 +766,7 @@ h2.quotes{
 	height:100%;	
 }
 #perso{
-	background-image:url(../img/Nod_Idle3.gif);	
+	background-image:url(../img/Mren_Idle.gif);	
 }
 
 #undead{
@@ -788,8 +788,6 @@ h2.quotes{
 .inline-newsletter{
 	display:inline-block;
 }
-
-
 
 .btn-submit{
 	width:157px;
@@ -821,6 +819,10 @@ h2.quotes{
 	border:solid 2px;
 	border-color: #442604;
 	border-radius: 2px; 
+}
+
+.form-control-preorder{
+	font-size: 1em;
 }
 
 .mc-field-group{
@@ -1040,9 +1042,6 @@ footer #legal p{
 
 @media(max-width:768px){
 
-    #perso{
-	    background-image:url(../img/Nod_Idle3_mobile.gif);	
-    }
 	footer{
 		background-size:250% auto; 
 	}
