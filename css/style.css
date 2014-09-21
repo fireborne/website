@@ -363,20 +363,8 @@ h2.quotes{
 	background-image: url(../img/ico_tumblr.png);
 }
 
-#youtube_grey{
-	background-image: url(../img/ico_youtube.png);
-}
-
-#twitter_grey{
-	background-image: url(../img/ico_twitter.png);
-}
-
-#facebook_grey{
-	background-image: url(../img/ico_fb.png);
-}
-
-#tumblr_grey{
-	background-image: url(../img/ico_tumblr.png);
+#google{
+	background-image: url(../img/ico_google.png);
 }
 
 .rezo_sociaux:hover{
