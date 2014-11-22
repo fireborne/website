@@ -1,4 +1,4 @@
-var tumblr_url = "http://blog.firebornegame.com/api/read/json/?num=3";
+var tumblr_url = "http://blog.firebornegame.com/api/read/json/?num=3&filter=text";
 
 var planet_filename = "img/logo/planet01.png"; //image de référence pour le resizing du logo
 
@@ -119,15 +119,19 @@ function readTumblrPosts(){
 				var dateString = days[dayofweek] + ', ' + months[month] + '. ' + day;
 				postElement.attr("href",url);
 				switch(post.type){
-					case "regular":
-						postElement.find(".devblog_content").html(post['regular-body']);
+					default:
+						postElement.find(".devblog_content").html('<p>' + post['regular-body'].substring(0, 500) + '...</p>');
 						//postElement.find(".devblog_media").hide();
 						postElement.find(".devblog_media").css("background-image","url(img/tumblr_default.png)");						
 						break;
 					case "photo":
-						postElement.find(".devblog_content").html(post['photo-caption']);
+					    postElement.find(".devblog_content").html('<p>' + post['photo-caption'].substring(0, 200) + '...</p>');
 						postElement.find(".devblog_media").css("background-image","url("+post['photo-url-250']+")");
 						break;
+				    case "video":
+				        postElement.find(".devblog_content").html('<p>' + post['video-caption'].substring(0, 200) + '...</p>');
+				        postElement.find(".devblog_media").css("background-image", "url(img/tumblr_default.png)");
+				        break;
 				}
 				
 				postElement.find(".devblog_date").html(dateString);
